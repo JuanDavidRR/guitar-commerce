@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import useCart from "./hooks/useCart";
 
 function App() {
-  //Returning the functions of my custom hook to be used
   const {
     data,
     cart,

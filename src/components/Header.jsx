@@ -1,4 +1,4 @@
-
+//Props from my app.jsx that actually are functions from my custom hook
 const Header = ({
   cart,
   removeFromCart,

@@ -89,6 +89,7 @@ const useCart = () => {
     //END LOGIC FOR APP.JSX //
 
     //LOGIC FOR HEADER.JSX //
+
     //Derivated states
     //Usememo is a hook that allows you to memorize the value of a variable and does not render the app again, unless the cart changes.
     const isEmpty = useMemo(() => cart.length === 0, [cart]);
@@ -113,7 +114,6 @@ const useCart = () => {
         isEmpty,
         cartTotal
     }
-
 }
 
 export default useCart;
