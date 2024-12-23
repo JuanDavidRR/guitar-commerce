@@ -1,4 +1,4 @@
-const GuitarCard = ({ guitar, addToCart }) => {
+const GuitarCard = ({ guitar, addToCart, isDisabled }) => {
   const { name, image, price, description } = guitar;
 
   return (
@@ -18,8 +18,9 @@ const GuitarCard = ({ guitar, addToCart }) => {
           onClick={() => addToCart(guitar)}
           type="button"
           className="btn btn-dark w-100"
+          disabled={isDisabled(guitar.id)}
         >
-          Agregar al Carrito
+          {isDisabled(guitar.id) ? "No puedes agregar más" : "Agregar al Carrito"}
         </button>
       </div>
     </article>

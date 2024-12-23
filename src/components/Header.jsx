@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 
 const Header = ({
   cart,
@@ -8,15 +7,9 @@ const Header = ({
   clearCart,
   MAX_QUANTITY,
   MIN_QUANTITY,
+  isEmpty,
+  cartTotal,
 }) => {
-  //Derivated states
-  //Usemeo is a hook that allows you to memorize the value of a variable and does not render the app again, unless the cart changes.
-  const isEmpty = useMemo(() => cart.length === 0, [cart]);
-  const cartTotal = useMemo(
-    () =>
-      cart.reduce((total, guitar) => total + guitar.quantity * guitar.price, 0),
-    [cart]
-  );
 
   return (
     <header className="py-5 header">
@@ -108,7 +101,10 @@ const Header = ({
                     <p className="text-end">
                       Total pagar: <span className="fw-bold">${cartTotal}</span>
                     </p>
-                    <button onClick={clearCart} className="btn btn-dark w-100 mt-3 p-2">
+                    <button
+                      onClick={clearCart}
+                      className="btn btn-dark w-100 mt-3 p-2"
+                    >
                       Vaciar Carrito
                     </button>
                   </section>
